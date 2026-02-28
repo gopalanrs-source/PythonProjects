@@ -2,5 +2,4 @@
 num1 = input("Enter the first number : ")
 num2 = input("Enter the second number : ")
 result = round(float(num1) + float(num2),2)
-print("the sum of numbers is : "+str(result))
-
+print(f"the sum of numbers is : {result:.2f}")
