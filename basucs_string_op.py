@@ -1,5 +1,6 @@
 course = "Python for Beginners"
 print(course.find("for"))
+print("Python" in course)
 course2 = course.replace("for", "4")
 course3 = course.replace("Beginners","Everyone")
 print(course)

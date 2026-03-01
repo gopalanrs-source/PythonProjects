@@ -12,3 +12,16 @@ z = 10 + 3 *2
 print(z)
 z = (10+3)*2
 print(z)
+
+x = 3 > 2
+print(x)
+# >
+# <
+# >=
+# <=
+# ==
+# !=
+
+price = 5
+print(price >10 and price <200)
+print(price >10 or price <50)
