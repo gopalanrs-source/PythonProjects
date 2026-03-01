@@ -7,3 +7,5 @@ result = round(float(num1) + float(num2),2)
 print(f"the sum of numbers is : {result:.2f}")
 print(f"the sum of numbers is : {result:.3f}")
 #test commit2
+print(f"the sum of numbers is : {result:.2f}")
+
