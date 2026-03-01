@@ -5,3 +5,4 @@ result = round(float(num1) + float(num2),2)
 #use round for calculating the result upto 2 decimal places
 #use f-string for printing the result with 2 decimal places
 print(f"the sum of numbers is : {result:.2f}")
+#test commit
