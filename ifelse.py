@@ -9,5 +9,11 @@ elif age <14 and age >= 5:
 elif age < 5:
      print("Student is in elementary school")
 else :
-     print("Student is out of school")     
+     print("Student is out of school")   
+
+print(age if age <= 18 else "Student is out of school")
+print("ternary operation in python" if age > 1 else "else condition of ternary operation")
+
+
+      
 
