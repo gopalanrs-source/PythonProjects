@@ -24,3 +24,16 @@ grocery_list.reverse()
 print(grocery_list)
 grocery_list.sort(reverse=False)
 print(grocery_list)
+print("....................................")
+print(sorted(grocery_list, reverse=True))
+print(grocery_list)
+
+g1 = grocery_list.copy()
+print(g1)
+g2 = grocery_list[:]
+print(g2)
+g3 = list(grocery_list)
+print(g3)
+
+
+
