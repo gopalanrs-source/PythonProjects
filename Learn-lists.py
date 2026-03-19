@@ -18,3 +18,9 @@ grocery_list[2:2] = ["grapes","oranges"] # inserts "grapes" and "oranges" at ind
 print(grocery_list)
 grocery_list[1:3] = ["sugarcane","papaya"]  # replaces the items at index 1 and 2 with "sugarcane" and "papaya"
 print(grocery_list)
+grocery_list.sort()
+print(grocery_list)
+grocery_list.reverse()
+print(grocery_list)
+grocery_list.sort(reverse=False)
+print(grocery_list)
