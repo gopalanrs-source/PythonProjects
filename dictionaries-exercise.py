@@ -24,11 +24,21 @@ print(car)
 print(car.popitem())
 car["EV"] = "yes"
 print(car)
-del car["EV"]
+#del car["EV"]
 print(car)
-car.clear()
+#car.clear()
+print(car)
+print("-------------")
+car2 = car   # car2 = car creates a reference to the same dictionary object in memory, so changes to car2 will affect car and vice versa.
+print(car2)
+print(car)
+
+car2["EV"] = "new"
 print(car)
 
 
+# good copy methods
+car3 = car.copy()
+car4 = dict(car)
 
 
