@@ -11,6 +11,9 @@ def hello(name, lang):
 
 parser = argparse.ArgumentParser(description="A simple command-line tool to demonstrate argparse.")
 
+
+#note : the main difference between Input is executed inside the code whereas argparse is executed from the command line.
+
 # parser.add_argument("name", type=str, help="Your name")
 # parser.add_argument("--age", type=int, help="Your age", default=0)
 # parser.add_argument("--greet", action="store_true", help="Whether to greet the user")
