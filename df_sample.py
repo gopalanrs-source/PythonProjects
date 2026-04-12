@@ -3,9 +3,9 @@ import email
 import pandas as pd
 
 people = {
-    "first" : ["Corey", "Jane", "John"],
-    "last" : ["Schafer", "Doe", "Doe"],
-    "email" : ["corey.schafer@gmail.com", "jane.doe@gmail.com", "john.smith@gmail.com"]
+    "first" : ["Corey", "Jane", "John","Adam"],
+    "last" : ["Schafer", "Doe", "Doe", "Doe"],
+    "email" : ["corey.schafer@gmail.com", "jane.doe@gmail.com", "john.smith@gmail.com","adam.doe@gmail.com"]
 }
 
 df = pd.DataFrame(people)
@@ -68,9 +68,11 @@ people2 = {
 df2 = pd.DataFrame(people2)
 print(df2)
 df = pd.concat([df, df2], ignore_index=True)
+# df.drop(index=4, inplace=True)
+# print(df)
+# filt = (df['last'] == 'Doe') 
+# df.drop(index=df[filt].index, inplace=True)
+df.sort_values(by=['last', 'first'], ascending=[False, True], inplace=True)
 print(df)
-df.drop(index=4, inplace=True)
-print(df)
-filt = (df['last'] == 'Doe') 
-df.drop(index=df[filt].index, inplace=True)
+df.sort_index(inplace=True)
 print(df)
