@@ -22,9 +22,11 @@ df['Hobbyist'] = df['Hobbyist'].map({'Yes': True, 'No': False})
 
 df.sort_values(by=['Country', 'SalaryUSD'], ascending=[True, False], inplace=True)
 # print(df[['Country','SalaryUSD']].head(50))
-print(df['SalaryUSD'].nlargest(10))
-print(df.nlargest(10, 'SalaryUSD')[['Country','SalaryUSD', 'EdLevel', 'Employment']])
+# print(df['SalaryUSD'].nlargest(10))
+# print(df.nlargest(10, 'SalaryUSD')[['Country','SalaryUSD', 'EdLevel', 'Employment']])
 # print(df.nsmallest(10, 'SalaryUSD')[['Country','SalaryUSD']])
+print(df.median())
+
       
 
 
