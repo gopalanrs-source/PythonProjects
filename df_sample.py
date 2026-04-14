@@ -1,6 +1,7 @@
 import email
-
 import pandas as pd
+import numpy as np
+
 
 people = {
     "first" : ["Corey", "Jane", "John","Adam"],
@@ -73,6 +74,40 @@ df = pd.concat([df, df2], ignore_index=True)
 # filt = (df['last'] == 'Doe') 
 # df.drop(index=df[filt].index, inplace=True)
 df.sort_values(by=['last', 'first'], ascending=[False, True], inplace=True)
-print(df)
+# print(df)
 df.sort_index(inplace=True)
-print(df)
+# print(df)
+
+
+new_people = {
+    "first" : ["Corey", "Jane", "John","Chris",np.nan, None, 'NA'],
+    "last" : ["Schafer", "Doe", "Doe", "Schafer",np.nan, np.nan,'Missing'],
+    "email" : ["corey.schafer@gmail.com", "jane.doe@gmail.com", "john.doe@gmail.com",None, np.nan, "anonymous@email.com",'NA'],
+    "age" : ['33', '55', '63','36', None, None, 'Missing']
+}
+
+df2 = pd.DataFrame(new_people)
+# print("----------------  1  ---------------------")
+# print(df2.isna)
+# print(df2.isna().sum())
+df2.fillna(value='0', inplace=True)
+print(df2)
+
+# df2.dropna(inplace=True)
+# print("-------------------------------------")
+# print(df2)
+# df2.dropna(axis='index', how='all', inplace=True)
+# print("-------------------------------------")
+# print(df2)
+
+df2.replace('NA', np.nan, inplace=True)
+df2.replace('Missing', np.nan, inplace=True)
+
+df2.dropna(axis='index', how='all', subset=['last','email'], inplace=True)
+# print("***************  2  *****************")
+# print(df2.isna)
+# print(df2.isna().sum())
+df2['age'] = df2['age'].astype('float')
+print(df2['age'].mean())
+
+

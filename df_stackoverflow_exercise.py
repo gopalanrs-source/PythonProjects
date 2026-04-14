@@ -5,7 +5,8 @@ pd.set_option('display.max_columns', None)
 pd.set_option('display.width', None)
 pd.set_option('display.max_colwidth', None)
 
-df = pd.read_csv('data/survey_results_public.csv', index_col ='Respondent')
+na_vals = ['NA', 'Missing']
+df = pd.read_csv('data/survey_results_public.csv', index_col ='Respondent', na_values=na_vals)
 scheme_df = pd.read_csv('data/survey_results_schema.csv', index_col ='Column')
 
 # print(df.head())
@@ -55,11 +56,23 @@ country_respondents = df['Country'].value_counts()
 # print(python_pct.sort_values(ascending=False))
 
 python_df = pd.concat([country_respondents, python_users], axis='columns', sort=False)
-print(python_df.head(5))
+# print(python_df.head(5))
 python_df.columns = ['TotalRespondents', 'PythonUsers'] 
 python_df['PythonPct'] = (python_df['PythonUsers'] / python_df['TotalRespondents']) * 100
-print(python_df.sort_values(by='PythonPct', ascending=False).head(10))
-print(python_df.loc['India'])
+# print(python_df.sort_values(by='PythonPct', ascending=False).head(10))
+# print(python_df.loc['India'])
+print(df['YearsCode'].value_counts())
+print(df['YearsCode'].unique())
+print(df['YearsCode'].nunique())
+df['YearsCode'] = df['YearsCode'].replace('Less than 1 year', 0)
+df['YearsCode'] = df['YearsCode'].replace('More than 50 years', 51)
+print(df['YearsCode'].unique())
+df['YearsCode'] = df['YearsCode'].astype('float')
+print(df['YearsCode'].mean())
+
+
+
+
 
 
 
