@@ -33,6 +33,9 @@ print(Daily_highs['2020-01-01'])
 Weekly_candle = df.resample('W').agg({'Open':'first', 'High':'max', 'Low':'min', 'Close':'last', 'Volume':'sum'})  # to resample the dataframe to weekly frequency and get the first value of the 'Open' column, maximum value of the 'High' column, minimum value of the 'Low' column, last value of the 'Close' column and sum of the 'Volume' column for each week.
 print(Weekly_candle.head(10))
 
+# ------------- works in Jupyter Notebook only -------------
+# %matplotlib inline
+# Daily_highs.plot()  # to plot the daily highs. This will give us a line plot of the daily highs.
 
 
 
