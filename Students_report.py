@@ -37,7 +37,8 @@ def grader(row):
         return "F"
 
 data["Grade"] = data.apply(grader, axis=1)
-print(data.head(5))
+print("\nStudents Final Report:")
+print(data.head(10))
 
 fail = data[data["Result"] == "Fail"]
-print(fail)
+# print(fail)
